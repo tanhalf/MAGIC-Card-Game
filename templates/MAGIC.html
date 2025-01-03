@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/MAGIC.css') }}">
+  
+</head>
+
+<body>
+  <canvas id="canvas" class="canvas"></canvas>
+  <canvas id="health_canvas" class="canvas"></canvas>
+  <div id="button-container" class = "button-container">
+    <button id="start">START</button>
+    <button id="counter"> 0 </button>
+    <button id="attack">ATTACK</button>
+    <button id="heal">HEAL</button>
+    <button id = "draw_stack" class="draw_stack">DRAW STACK</button>
+    <button id="card" class ="card" >CARD</button>
+    <button id="hand" class="hand" >IN HAND (0)</button>
+    <!--<button class= "health-bar"; id="HB1">HEALTH BAR 1</button>
+    <button class = "health-bar"; id="HB2">HEALTH BAR 2</button>-->
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='css/MAGIC.js') }}" type="module"></script>
+  <script src="{{ url_for('static', filename='css/player.js') }}" type="module"></script>
+  <script src="{{ url_for('static', filename='css/card.js') }}" type="module"></script>
+  <script src="{{ url_for('static', filename='css/health_bar.js') }}" type="module"></script>
+</body>
+
+</html>

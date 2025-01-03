@@ -1,0 +1,70 @@
+body{
+  font-family: Impact;
+  font-size: 25px;
+} 
+.canvas{
+  background-color: black;
+  border: 4px solid brown;
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.health_mana_canvas{
+  background-color: black;
+  border: 4px solid brown;
+  display:block;
+  position:fixed;
+  bottom:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.button-container{
+  position: absolute;
+}
+
+.card{
+  height: 200px;
+  width: 150px;
+  position:absolute;
+  top:150px;
+  left:50px;
+}
+
+.draw_stack{
+  height: 200px;
+  width: 150px;
+  position:absolute;
+  top:350px;
+  left:1300px;
+}
+
+.hand{
+  height: 200px;
+  width: 150px;
+  position:absolute;
+  top:450px;
+  left:600px;
+}
+
+.new_card{
+  height: 200px;
+  width: 150px;
+  position:absolute;
+  top:150px;
+  left:50px;
+}
+.card:hover{
+  height: 300px;
+  width: 225px;
+  transition: ease;
+  transition-duration: 1s;
+  
+}
