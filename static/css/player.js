@@ -9,7 +9,7 @@ constructor(name){
   this._health = 20;
   this._mana = 0;
   this._hand = new hand(); 
-  this._health_bar = new health_bar(this._health );
+  this._health_bar = new health_bar(this._health);
   this._mana_bar = new mana_bar(this._mana);
 }
 
@@ -19,6 +19,10 @@ handCount(){
 
 health(){
   return this._health;
+}
+
+healthBar(){
+  return this._health_bar;
 }
 
 mana(){

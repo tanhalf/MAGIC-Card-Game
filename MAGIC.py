@@ -30,9 +30,9 @@ def add():
     res = str(turn)
     return res
 
-# def hand():
-#     if turn == -1:
-#         subprocess.run(['node', '-e', draw_js])
+def hand():
+    if turn == -1:
+        subprocess.run(['node', '-e', draw_js])
 
 if __name__ == '__main__':
     app.run(debug=True)

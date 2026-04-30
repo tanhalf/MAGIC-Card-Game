@@ -2,7 +2,7 @@ import {player} from './player.js';
 import {draw} from './test.js';
   document.addEventListener("DOMContentLoaded", function() {
     var start = document.getElementById("start");
-      //const turn =null;
+      const turn =null;
       
     start.addEventListener("click", async function setup(){
         const response = await fetch("/");
@@ -24,28 +24,45 @@ import {draw} from './test.js';
   });
 
 
-
   export async function getData(){
-
-  $(document).ready(function() {
+  return new Promise((resolve, reject) => {
     $.ajax({
       url: '/',
       method: 'POST',
       success: function(response){
-        
         var counter = document.getElementById("counter");
         counter.textContent = JSON.parse(response.toString());
-        
+        resolve(response);
       },
       error: function(xhr, status, error) {
         console.error('DAYUM:', error);
+        reject(error);
       }
+    });
+  });
+}
+
+//   export async function getData(){
+
+//   $(document).ready(function() {
+//     $.ajax({
+//       url: '/',
+//       method: 'POST',
+//       success: function(response){
+        
+//         var counter = document.getElementById("counter");
+//         counter.textContent = JSON.parse(response.toString());
+        
+//       },
+//       error: function(xhr, status, error) {
+//         console.error('DAYUM:', error);
+//       }
       
     
-    });
-  })
+//     });
+//   })
   
-}
+// }
 
 
 /*

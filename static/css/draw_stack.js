@@ -16,6 +16,6 @@ export class draw_stack extends deck{
 //   ds.push(new card());
 // var draw = document.getElementById("draw_stack");
 // draw.addEventListener("click", function(){
-//   while(hand.)
+//   while(hand.#size < 7)
 //   hand.push(super.pop());
 // })
