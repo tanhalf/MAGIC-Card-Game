@@ -11,25 +11,25 @@ export class hand extends deck{
   push(card){
     super.push(card);
     this.#size++;
-    const text = document.getElementById("hand");
-    text.textContent = "IN HAND ("+this.getCount()+")";
-    this.makecard(card);
+    // const text = document.getElementById("hand");
+    // text.textContent = "IN HAND ("+this.getCount()+")";
+     this.makecard(card);
   }
 
   makecard(card){ //use nodes for spacing
     const cardBtn = document.createElement("button");
     cardBtn.textContent = card.getName();
-    var cont = document.getElementById("button-container");
+    cardBtn.classList.add("hand");
+    var cont = document.getElementById("hand-container");
     
-    Object.assign(cardBtn.style,{
-      position: "relative",
-      right: "-130px",
-      className: "card",
-      height: "200px",
-      width: "150px"
-    });
-    cont.appendChild(cardBtn);
-  }
+    // Object.assign(cardBtn.style,{
+    //   position: "relative",
+    //   height: "200px",
+    //   width: "150px",
+    //   marginLeft: "-100px"
+    // });
+     cont.appendChild(cardBtn);
+   }
   
 }
 
