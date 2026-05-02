@@ -1,28 +1,29 @@
 
  export class card{
-  
-  constructor(name=null, type=null, tap=false, id = null){
-    this._tap = tap;
-    this._name=name;
-    this._type = type;
-    this._id = id;
-  }
-
-  getId(){
-    return this._id;
+  #name;
+  #type;
+  #description;
+  #value;
+  constructor(name=null, type=null, description = null, value = 0){
+    // this.#tap = tap;
+    this.#name=name;
+    this.#type = type;
+    this.#description = description;
+    this.#value = value;  
   }
 
   getName(){
-    return this._name;
+    return this.#name;
   }
 
   getType(){
-    return this._type;
+    return this.#type;
   }
 
-  getTap(){
-    return this._tap;
+  setType(type){
+    this.#type = type;
   }
+
 }
 var button_container = document.getElementById("button-container");
 // choose_card.addEventListener("click", function(){

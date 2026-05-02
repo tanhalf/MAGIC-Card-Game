@@ -42,29 +42,6 @@ import {draw} from './test.js';
   });
 }
 
-//   export async function getData(){
-
-//   $(document).ready(function() {
-//     $.ajax({
-//       url: '/',
-//       method: 'POST',
-//       success: function(response){
-        
-//         var counter = document.getElementById("counter");
-//         counter.textContent = JSON.parse(response.toString());
-        
-//       },
-//       error: function(xhr, status, error) {
-//         console.error('DAYUM:', error);
-//       }
-      
-    
-//     });
-//   })
-  
-// }
-
-
 /*
 function draw(){
   if (counter >1)

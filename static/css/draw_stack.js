@@ -4,9 +4,12 @@ import {card} from './card.js';
 export class draw_stack extends deck{
   constructor(){
     super()
+
   }
 
   pop(){
+    // c = super.pop();
+    //card.setType();
     return super.pop();
   }
 }
