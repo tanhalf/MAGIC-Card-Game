@@ -13,14 +13,6 @@ const script = require('./MAGIC.js');
 script.{draw_function}();
 """
 
-# connect = psycopg2.connect(
-#     dbname = os.getenv("MAGIC_DB"),
-#     user = os.getenv("DB_USER"),
-#     password = os.getenv("DB_PASSWORD"),
-#     host = "localhost",
-#     port = 5432
-# )
-
 conn = psycopg2.connect(
     dbname="magic_db",
     user="postgres",
@@ -33,28 +25,36 @@ conn = psycopg2.connect(
 def index():
     return render_template("MAGIC.html")
 
-@app.route("/draw", methods=["POST"])
+@app.route("/draw", methods=["GET"])
 def draw_card():
-    cur = psycopg2.connect.cursor()
+    
+    try:
+        #conn.rollback()
+        cur = conn.cursor()
 
-    cur.execute(
-        """
-        SELECT type, name, description, value 
-        FROM cards 
-        ORDER BY RANDOM() 
-        LIMIT 1;
-        """
-    )
+        cur.execute(
+            """
+            SELECT * 
+            FROM cards 
+            ORDER BY RANDOM() 
+            LIMIT 1;
+            """
+        )
 
-    psycopg2.connect.commit()
-    card = cur.fetchone()
+        cardx = cur.fetchone()
 
-    return jsonify({
-        "type": card[0],
-        "name": card[1],
-        "description": card[2],
-        "value": card[3]
-    })
+        return jsonify({
+            "id": cardx[0],
+            "name": cardx[1],
+            "type": cardx[2],
+            "description": cardx[3],
+            "value": cardx[4]
+        })
+
+    except Exception as e:
+        conn.rollback()
+        print("DB ERROR:", e)
+        return jsonify({"error": str(e)}), 500
 
 turn = 0
 

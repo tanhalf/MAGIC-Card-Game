@@ -71,12 +71,7 @@ var heal_action = document.createElement("button");
 var tap = document.createElement("button");
 atk.textContent="ATTACK";
 heal_action.textContext="HEAL";
-/*
-function tap(){
-choose_card.addEventListener("click", function(){
-  choose_card.style.
 
-});*/
 choose_card.addEventListener("click", function(){
   if(actions.contains(atk)){
    actions.removeChild(atk);

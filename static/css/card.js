@@ -4,12 +4,17 @@
   #type;
   #description;
   #value;
-  constructor(name=null, type=null, description = null, value = 0){
-    // this.#tap = tap;
-    this.#name=name;
+  #id;
+  #instance_id;
+  constructor(instance_id = null, id = null, name=null, type=null, description = null, value = 0){
+    this.#instance_id = instance_id;
+    this.#id = id;
+    this.#name = name;
     this.#type = type;
     this.#description = description;
     this.#value = value;  
+    
+    
   }
 
   getName(){
@@ -22,6 +27,14 @@
 
   setType(type){
     this.#type = type;
+  }
+
+  setId(id){
+    this.#id = id;
+  }
+
+  setInstanceId(instance_id){
+    this.#instance_id = instance_id;
   }
 
 }

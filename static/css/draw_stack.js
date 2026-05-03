@@ -7,18 +7,21 @@ export class draw_stack extends deck{
 
   }
 
-  pop(){
-    // c = super.pop();
-    //card.setType();
-    return super.pop();
+  async pop(){
+    const res = await fetch('/draw');
+    const data = await res.json();
+    // .then(res => res.json())
+    // .then(data => {
+      return new card({
+        instance_id: null,
+        id: data.id,
+        name: data.name,
+        type: data.type,
+        description: data.description,
+        value: data.value
+      });
+    // return super.pop();
   }
+
 }
 
-// const ds = new draw_stack();
-// for(let i = 0; i < 20; i++)
-//   ds.push(new card());
-// var draw = document.getElementById("draw_stack");
-// draw.addEventListener("click", function(){
-//   while(hand.#size < 7)
-//   hand.push(super.pop());
-// })
